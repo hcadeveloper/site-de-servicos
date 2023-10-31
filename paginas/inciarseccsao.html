@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="shortcut icon" href="/imagens/logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <div class="paracentralizar">
+    <form class="form_do_home">
+
+        <h1 class="titulo_iniciar_seccao">Iniciar Secção</h1>
+        <div class="logo_user">
+            
+        </div>
+        <div class="seccao_de_inputs">
+
+            <div class="input_box">
+                <input  placeholder="Nome de Usuário" minlength="4" maxlength="25" class="nome_de_usuario" id="nome_de_usuario" type="text" autocomplete="off"><span><i class='bx bxs-user'></i></span>
+            </div>
+
+            <div class="input_box">
+                <input  placeholder="Senha" minlength="4" maxlength="6" class="senha" id="senha" type="password"><span><i class='bx bxs-lock-alt' ></i></span>
+            </div>
+
+            <div class="lembrar_senha">
+                <label> <input type="checkbox">Lembrar Senha</label>
+                <a href="esquecisenha.html">Esqueci Senha!</a>
+            </div>
+    
+            <button class="botao_de_entrar" onclick="entrar(event)">ENTRAR</button>
+
+            
+
+            <div class="links_do_incio_de_criar_conta">
+                <p>Não tenho uma conta! <a  href="criarconta.html">Criar Conta</a></p>
+            </div>
+            
+
+            <div class="notificaoes_de_seccao">
+                <span id="info_sucesso" class="info_sucesso"></span>
+                <span id="info_erro" class="info_erro"></span>
+                <span id="info_vazio" class="info_vazio"></span>
+            </div>
+        </div>
+    </form>
+</div>
+
+    <script>
+        function entrar(event) {
+          var nomeDeUsuario = document.getElementById("nome_de_usuario").value;
+          var senha = document.getElementById("senha").value;
+          var ms_sucesso = document.getElementById("info_sucesso");
+          var ms_erro = document.getElementById("info_erro");
+          var ms_vazio = document.getElementById("info_vazio");
+
+      if (!nomeDeUsuario || !senha) {
+        ms_vazio.textContent = "Preencha todos os campos.";
+        setTimeout(function() {
+            ms_vazio.textContent = "";
+        }, 5000);
+      }
+      else if (nomeDeUsuario == "hhhh" && senha == "hhhh") {
+        ms_sucess.textContent = "Login bem-sucedido!";
+        setTimeout(function() {
+          window.location.href = "home.html";
+        }, 5000);
+      } else {
+        ms_erro.textContent = "Senha ou Usuário Incorrecto!";
+        setTimeout(function() {
+            ms_erro.textContent = "";
+        }, 5000);
+      }
+      event.preventDefault();
+      return false;
+    }
+  </script>
+  
+</body>
+</html>

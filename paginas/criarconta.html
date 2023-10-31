@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="/imagens/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="paracentralizar">
+    <form class="form_do_home">
+
+        <h1 class="titulo_iniciar_seccao">Criar Conta</h1>
+        <div class="logo_user">
+            
+        </div>
+        <div class="seccao_de_inputs">
+
+            <div class="input_box" id="input_box">
+                <label>Nome de Usuário<span class="sobrigatorio">*</span></label>
+                <input required minlength="4" maxlength="25" class="nome_de_usuario" id="nome_de_usuario" type="text" autocomplete="off">
+            </div>
+            
+            <div class="input_box" id="input_box">
+                <label>Email<span class="sobrigatorio">*</span></label>
+                <input required class="email" id="email" type="email" autocomplete="off">
+            </div>
+
+            <div class="input_box" id="input_box">
+                <label>Senha<span class="sobrigatorio">*</span></label>
+                <input required class="senha" id="senha" type="password">
+            </div>
+
+            <div class="input_box" id="input_box">
+                <label>Confirmar Senha<span class="sobrigatorio">*</span></label>
+                <input required class="confirmar_senha" id="confirmar_senha" type="password">
+            </div>
+
+            <button class="botao_de_entrar" onclick="">Enviar</button>
+
+            <div class="links_do_incio_de_criar_conta">
+                <p id="espacoentreletras">Já tenho uma conta! <a href="inciarseccsao.html"><b>Entrar</b></a></p>
+            </div>
+            
+
+            <!--<div class="notificaoes_de_seccao">
+                <span id="info_sucesso" class="info_sucesso">Logado com sucesso</span>
+                <span id="info_erro" class="info_erro">Senha ou usuário inválido!</span>
+                <span id="info_vazio" class="info_vazio">Preencha todos campos!</span>
+            </div>-->
+        </div>
+    </form>
+    </div>
+
+    <script>
+        function entrar(){
+            const usuario = document.getElementById('nome_de_usuario').value
+            const senha = document.getElementById('senha').value
+            const sucesso = document.getElementById('info_sucesso')
+            const erro = document.getElementById('info_erro')
+            const vazio = document.getElementById('info_vazio')
+
+            if (usuario === 'h' && senha === '1'){
+                sucesso.style.display = 'block'
+            }
+            if( usuario === '' || senha === ''){
+                vazio.style.display = 'block'
+            }
+            else{
+                erro.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
